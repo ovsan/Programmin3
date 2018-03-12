@@ -323,7 +323,8 @@ newDirections() {
         matrix[this.y][this.x] = 0;
         for (var i in gishatichArr) {
             if (this.x ==gishatichArr[i].x && this.y == gishatichArr[i].y) {
-               gishatichArr.splice(i, 1);                       
+               gishatichArr.splice(i, 1);    
+               break;                   
             }
         }
     
@@ -418,6 +419,7 @@ newDirections() {
             for (var i in  gishatichArr) {
                 if (x ==  gishatichArr[i].x && y == gishatichArr[i].y) {
                    gishatichArr.splice(i, 1);
+                   break;
                 }
             }
             if (this.multiply == 1) {
@@ -456,7 +458,8 @@ newDirections() {
         matrix[this.y][this.x] = 0;
         for (var i in gishatichkerArr) {
             if (this.x ==gishatichkerArr[i].x && this.y == gishatichkerArr[i].y) {
-               gishatichkerArr.splice(i, 1);                       
+               gishatichkerArr.splice(i, 1);  
+               break;                     
             }
         }
      console.log("merav");
