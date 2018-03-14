@@ -5,14 +5,14 @@ class Gishatich {
         this.index = ind;
         this.x = x;
         this.y = y;
-        this.energy = 10;
+        this.energy = 20;
         this.multiply = 0;
     }
-    
 
 
 
-newDirections() {
+
+    newDirections() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -57,9 +57,9 @@ newDirections() {
 
             this.x = x;
             this.y = y;
-              console.log("sharjvec");
+            console.log("sharjvec");
         }
-       
+
     }
 
 
@@ -86,7 +86,7 @@ newDirections() {
 
             for (var i in eatArr) {
                 if (x == eatArr[i].x && y == eatArr[i].y) {
-                   eatArr.splice(i, 1);
+                    eatArr.splice(i, 1);
                 }
             }
             if (this.multiply == 5) {
@@ -97,7 +97,7 @@ newDirections() {
         } else {
             this.move();
             this.energy--;
-            if (this.energy < 5) {
+            if (this.energy < 2) {
                 this.die();
                 //this.energy = 10;
             }
@@ -120,17 +120,17 @@ newDirections() {
             matrix[y][x] = 3;
             this.multiply = 0;
         }
-         console.log("bazm");
+        console.log("bazm");
     }
     die() {
         matrix[this.y][this.x] = 0;
         for (var i in gishatichArr) {
-            if (this.x ==gishatichArr[i].x && this.y == gishatichArr[i].y) {
-               gishatichArr.splice(i, 1);    
-               break;                   
+            if (this.x == gishatichArr[i].x && this.y == gishatichArr[i].y) {
+                gishatichArr.splice(i, 1);
+                break;
             }
         }
-    
+
     }
 
 

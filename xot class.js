@@ -4,7 +4,7 @@ class Grass {
         this.index = ind;
         this.x = x;
         this.y = y;
-      
+
         this.multiply = 0;
 
     }

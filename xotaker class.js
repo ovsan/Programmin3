@@ -5,7 +5,7 @@ class Eatgrass {
         this.x = x;
         this.y = y;
         this.multiply = 0;
-        this.energy =4;
+        this.energy = 4;
 
     }
 
@@ -39,7 +39,7 @@ class Eatgrass {
         return found;
     }
 
- 
+
 
     move() {
         var emptyCord = this.getDirections(0);
@@ -93,7 +93,7 @@ class Eatgrass {
         } else {
             this.move();
             this.energy--;
-            if (this.energy < 2) {
+            if (this.energy < 5) {
                 this.die();
             }
         }

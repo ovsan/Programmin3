@@ -1,17 +1,14 @@
 //գիշատիչակեր
-class Gishatichaker{
+class Gishatichaker {
     constructor(x, y, ind) {
         this.index = ind;
         this.x = x;
         this.y = y;
-        this.energy = 30;
+        this.energy = 40;
         this.multiply = 0;
     }
-    
 
-
-
-newDirections() {
+    newDirections() {
         this.directions = [
             [this.x - 1, this.y - 1],
             [this.x, this.y - 1],
@@ -41,8 +38,6 @@ newDirections() {
     }
 
 
-
-
     move() {
         var emptyCord = this.getDirections(0);
         var cord = random(emptyCord);
@@ -56,11 +51,11 @@ newDirections() {
 
             this.x = x;
             this.y = y;
-              console.log("sharjvec");
+            console.log("sharjvec");
         }
-       
+
     }
-     eat() {
+    eat() {
 
         var emptyCord = this.getDirections(3);
 
@@ -80,10 +75,10 @@ newDirections() {
             this.y = y;
 
 
-            for (var i in  gishatichArr) {
-                if (x ==  gishatichArr[i].x && y == gishatichArr[i].y) {
-                   gishatichArr.splice(i, 1);
-                   break;
+            for (var i in gishatichArr) {
+                if (x == gishatichArr[i].x && y == gishatichArr[i].y) {
+                    gishatichArr.splice(i, 1);
+                    break;
                 }
             }
             if (this.multiply == 1) {
@@ -116,17 +111,17 @@ newDirections() {
             matrix[y][x] = 3;
             this.multiply = 0;
         }
-         console.log("bazm");
+        console.log("bazm");
     }
     die() {
         matrix[this.y][this.x] = 0;
         for (var i in gishatichkerArr) {
-            if (this.x ==gishatichkerArr[i].x && this.y == gishatichkerArr[i].y) {
-               gishatichkerArr.splice(i, 1);  
-               break;                     
+            if (this.x == gishatichkerArr[i].x && this.y == gishatichkerArr[i].y) {
+                gishatichkerArr.splice(i, 1);
+                break;
             }
         }
-     console.log("merav");
+        console.log("merav");
     }
 
 
