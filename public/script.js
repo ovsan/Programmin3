@@ -133,6 +133,7 @@ function draw() {
 
     for (var i in xotArr) {
         xotArr[i].mul();
+       
     }
 
     for (var i in eatArr) {

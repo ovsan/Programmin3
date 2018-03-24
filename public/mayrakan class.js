@@ -1,4 +1,27 @@
-getDirections(t) {
+class mayrakan {
+    constructor(x, y, ind) {
+        this.index = ind;
+        this.x = x;
+        this.y = y;
+        this.energy = 40;
+        this.multiply = 0;
+
+    }
+
+    newDirections() {
+        this.directions = [
+            [this.x - 1, this.y - 1],
+            [this.x, this.y - 1],
+            [this.x + 1, this.y - 1],
+            [this.x - 1, this.y],
+            [this.x + 1, this.y],
+            [this.x - 1, this.y + 1],
+            [this.x, this.y + 1],
+            [this.x + 1, this.y + 1]
+        ];
+    }
+
+    getDirections(t) {
         this.newDirections();
         var found = [];
 
@@ -11,6 +34,10 @@ getDirections(t) {
                 }
             }
         }
-        return super.getDirections(t);
+       
+        return found;
     }
 
+
+
+}
