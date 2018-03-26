@@ -20,7 +20,7 @@ class Gishatichaker extends mayrakan {
 
             this.x = x;
             this.y = y;
-            console.log("sharjvec");
+           // console.log("sharjvec");
         }
 
     }
@@ -31,7 +31,7 @@ class Gishatichaker extends mayrakan {
         var cord = random(emptyCord);
 
         if (cord) {
-            console.log("kerav");
+           // console.log("kerav");
             this.multiply++;
 
             var x = cord[0];
@@ -80,7 +80,7 @@ class Gishatichaker extends mayrakan {
             matrix[y][x] = 3;
             this.multiply = 0;
         }
-        console.log("bazm");
+       // console.log("bazm");
     }
     die() {
         matrix[this.y][this.x] = 0;
@@ -90,7 +90,7 @@ class Gishatichaker extends mayrakan {
                 break;
             }
         }
-        console.log("merav");
+       // console.log("merav");
     }
 
 
