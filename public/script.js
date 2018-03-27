@@ -14,7 +14,11 @@ var eatcount = 50;
 var gishcount = 30;
 var gishkercount = 20;
 var kerparcount = 10;
+var wheaterContainer;
 
+var obj={
+    "grasscount":0
+}
 
 function setup() {
     for (var i = 0; i < erk; ++i) {
@@ -108,6 +112,7 @@ function setup() {
         }
     }
 
+    wheaterContainer = document.getElementById("wheater");
 
 }
 
@@ -121,8 +126,9 @@ function draw() {
 
 
     if (f % 30 >= 0 && f % 30 <= 9) {
-        document.getElementById("wheater").innerHTML = "garun";
-        document.getElementById("wheater").style.color = "green";
+        wheaterContainer.innerHTML = "garun";
+        wheaterContainer.style.color = "green";
+        
 
         background('#acacac');
         for (var i = 0; i < matrix.length; i++) {
@@ -153,9 +159,9 @@ function draw() {
             }
         }
     } else if (f % 30 >= 9 && f % 30 <= 19) {
-        document.getElementById("wheater").innerHTML = "amar";
-        document.getElementById("wheater").style.color = "#F9A60A";
-        background('#acacac');
+        wheaterContainer.innerHTML = "amar";
+        wheaterContainer.style.color = "#24F967";
+        background('#F39C12');
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 1) {
@@ -184,8 +190,8 @@ function draw() {
             }
         }
     } else if (f % 30 >= 19 && f % 30 <= 24) {
-        document.getElementById("wheater").innerHTML = "ashun";
-        document.getElementById("wheater").style.color = "red";
+        wheaterContainer.innerHTML = "ashun";
+        wheaterContainer.style.color = "#B9A303";
         background('#acacac');
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
@@ -215,8 +221,8 @@ function draw() {
             }
         }
     } else if (f % 30 >= 24 && f % 30 <= 29) {
-        document.getElementById("wheater").innerHTML = "dzmer";
-        document.getElementById("wheater").style.color = "#757372";
+        wheaterContainer.innerHTML = "dzmer";
+        wheaterContainer.style.color = "#B6B6B3  ";
         background('#acacac');
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
@@ -251,6 +257,7 @@ function draw() {
 
     for (var i in xotArr) {
         xotArr[i].mul();
+        obj.grasscount++;
 
     }
 
@@ -268,7 +275,9 @@ function draw() {
         }
 
     }
-
+    for (var i in kerparArr) {
+       kerparArr[i].eat();
+    }
 }
 
 

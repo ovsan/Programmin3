@@ -7,7 +7,7 @@ class Gishatichaker extends mayrakan {
     }
 
 
-    move() {
+    move() { 
         var emptyCord = this.getDirections(0);
         var cord = random(emptyCord);
 

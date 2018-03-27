@@ -1,12 +1,12 @@
 class Kerpar extends mayrakan {
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.energy = 30;
+        this.energy = 40;
 
     }
 
 
-    move() {
+    move() { 
         var emptyCord = this.getDirections(0);
         var cord = random(emptyCord);
 
@@ -19,7 +19,7 @@ class Kerpar extends mayrakan {
 
             this.x = x;
             this.y = y;
-           // console.log("sharjvec");
+           console.log("sharjvec");
         }
 
     }
@@ -43,9 +43,9 @@ class Kerpar extends mayrakan {
             this.y = y;
 
 
-            for (var i in gishatichArr) {
-                if (x == gishatichArr[i].x && y == gishatichArr[i].y) {
-                    gishatichArr.splice(i, 1);
+            for (var i in gkerparArr) {
+                if (x == kerparArr[i].x && y == kerparArr[i].y) {
+                    kerparArr.splice(i, 1);
                     break;
                 }
             }
@@ -57,7 +57,7 @@ class Kerpar extends mayrakan {
         } else {
             this.move();
             this.energy--;
-            if (this.energy < 10) {
+            if (this.energy < 5) {
                 this.die();
                 //this.energy = 10;
             }
@@ -73,8 +73,8 @@ class Kerpar extends mayrakan {
 
             this.multiply++;
 
-            var norGishatich = new Gishatich(x, y, this.index);
-            gishatichArr.push(norGishatich);
+            var norKerpar = new Kerpar(x, y, this.index);
+            kerparArr.push(norKerpar);
 
             matrix[y][x] = 3;
             this.multiply = 0;
@@ -83,9 +83,9 @@ class Kerpar extends mayrakan {
     }
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in gishatichkerArr) {
-            if (this.x == gishatichkerArr[i].x && this.y == gishatichkerArr[i].y) {
-                gishatichkerArr.splice(i, 4);
+        for (var i in kerparArr) {
+            if (this.x == kerparArr[i].x && this.y == kerparArr[i].y) {
+               kerparArr.splice(i, 1);
                 break;
             }
         }
