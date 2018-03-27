@@ -1,9 +1,10 @@
-var matrix = []
+var matrix = [];
 var side = 20;
 var xotArr = [];
 var eatArr = [];
 var gishatichArr = [];
 var gishatichkerArr = [];
+var kerparArr = [];
 
 
 var erk = 50;
@@ -12,13 +13,10 @@ var grasscount = 80;
 var eatcount = 50;
 var gishcount = 30;
 var gishkercount = 20;
+var kerparcount = 10;
 
 
 function setup() {
-
-
-
-
     for (var i = 0; i < erk; ++i) {
         matrix.push([]);
         for (var j = 0; j < bar; ++j) {
@@ -68,6 +66,15 @@ function setup() {
         }
     }
 
+    var c = 0;
+    while (c < kerparcount) {
+        var x = Math.floor(random(0, erk));
+        var y = Math.floor(random(0, bar));
+        if (matrix[x][y] == 0) {
+            matrix[x][y] = 5;
+            c++
+        }
+    }
 
 
 
@@ -107,118 +114,138 @@ function setup() {
 
 function draw() {
     var f = frameCount;
-    console.log(f*=2);
+    console.log(f *= 2);
 
 
 
 
 
-if(f%30>=0 && f%30<=9){
- var h1= document.getElementById("wheather");
- this.innerHtml="garun"
-    background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("green");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
+    if (f % 30 >= 0 && f % 30 <= 9) {
+        document.getElementById("wheater").innerHTML = "garun";
+        document.getElementById("wheater").style.color = "green";
+
+        background('#acacac');
+        for (var i = 0; i < matrix.length; i++) {
+            for (var j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) {
+                    fill("green");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 3) {
+                    fill('#0F0E0E  ');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    fill('#cc3300  ');
+                    ellipse(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                    fill('blue');
+                    rect(j * side, i * side, side, side);
+                }
+
             }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E  ');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300  ');
-                ellipse(j * side, i * side, side, side);
-            }
+        }
+    } else if (f % 30 >= 9 && f % 30 <= 19) {
+        document.getElementById("wheater").innerHTML = "amar";
+        document.getElementById("wheater").style.color = "#F9A60A";
+        background('#acacac');
+        for (var i = 0; i < matrix.length; i++) {
+            for (var j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) {
+                    fill("#24F967");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 3) {
+                    fill('#0F0E0E  ');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    fill('#cc3300  ');
+                    ellipse(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                    fill('blue');
+                    rect(j * side, i * side, side, side);
+                }
 
+            }
+        }
+    } else if (f % 30 >= 19 && f % 30 <= 24) {
+        document.getElementById("wheater").innerHTML = "ashun";
+        document.getElementById("wheater").style.color = "red";
+        background('#acacac');
+        for (var i = 0; i < matrix.length; i++) {
+            for (var j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) {
+                    fill("#EDCF1F  ");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 3) {
+                    fill('#0F0E0E  ');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    fill('#cc3300  ');
+                    ellipse(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                    fill('blue');
+                    rect(j * side, i * side, side, side);
+                }
+
+            }
+        }
+    } else if (f % 30 >= 24 && f % 30 <= 29) {
+        document.getElementById("wheater").innerHTML = "dzmer";
+        document.getElementById("wheater").style.color = "#757372";
+        background('#acacac');
+        for (var i = 0; i < matrix.length; i++) {
+            for (var j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 1) {
+                    fill("white  ");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 2) {
+                    fill("orange");
+                    rect(j * side, i * side, side, side);
+                } else if (matrix[i][j] == 0) {
+                    fill('#acacac');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 3) {
+                    fill('#0F0E0E  ');
+                    rect(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
+                    fill('#cc3300  ');
+                    ellipse(j * side, i * side, side, side);
+                }
+                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                    fill('blue');
+                    rect(j * side, i * side, side, side);
+                }
+
+            }
         }
     }
-}else if(f%30>=9 && f%30<=19){
-     console.log("amar")
-     background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("#15FB0A  ");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E  ');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300  ');
-                ellipse(j * side, i * side, side, side);
-            }
-
-        }
-    }
-}else if(f%30>=19 && f%30<=24){
-     console.log("ashun");
-     background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("#EDCF1F  ");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E  ');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300  ');
-                ellipse(j * side, i * side, side, side);
-            }
-
-        }
-    }
-}else if(f%30>=24 && f%30<=29){
-     console.log("dzmer");
-     background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("white  ");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E  ');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300  ');
-                ellipse(j * side, i * side, side, side);
-            }
-
-        }
-    }
-}
 
 
 

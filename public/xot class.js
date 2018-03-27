@@ -2,8 +2,7 @@
 class Grass extends mayrakan {
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.x = x;
-        this.y = y;
+    
        
 
     }
