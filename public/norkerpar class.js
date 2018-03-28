@@ -1,7 +1,7 @@
-class Kerpar extends mayrakan {
+class Kendani extends mayrakan {
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.energy = 40;
+        this.energy = 50;
 
     }
 
@@ -19,7 +19,7 @@ class Kerpar extends mayrakan {
 
             this.x = x;
             this.y = y;
-           console.log("sharjvec");
+            console.log("sharjvec");
         }
 
     }
@@ -30,7 +30,7 @@ class Kerpar extends mayrakan {
         var cord = random(emptyCord);
 
         if (cord) {
-           // console.log("kerav");
+            console.log("kerav");
             this.multiply++;
 
             var x = cord[0];
@@ -43,9 +43,9 @@ class Kerpar extends mayrakan {
             this.y = y;
 
 
-            for (var i in gkerparArr) {
-                if (x == kerparArr[i].x && y == kerparArr[i].y) {
-                    kerparArr.splice(i, 1);
+            for (var i in kendaniArr) {
+                if (x == kendaniArr[i].x && y == kendaniArr[i].y) {
+                    kendaniArr.splice(i, 1);
                     break;
                 }
             }
@@ -57,9 +57,9 @@ class Kerpar extends mayrakan {
         } else {
             this.move();
             this.energy--;
-            if (this.energy < 5) {
+            if (this.energy <5) {
                 this.die();
-                //this.energy = 10;
+                this.energy = 10;
             }
         }
     }
@@ -73,23 +73,23 @@ class Kerpar extends mayrakan {
 
             this.multiply++;
 
-            var norKerpar = new Kerpar(x, y, this.index);
-            kerparArr.push(norKerpar);
+            var norkendani = new Kendani(x, y, this.index);
+            kendaniArr.push(norkendani);
 
             matrix[y][x] = 3;
             this.multiply = 0;
         }
-       // console.log("bazm");
+        console.log("bazm");
     }
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in kerparArr) {
-            if (this.x == kerparArr[i].x && this.y == kerparArr[i].y) {
-               kerparArr.splice(i, 1);
+        for (var i in kendaniArr) {
+            if (this.x == kendaniArr[i].x && this.y == kendaniArr[i].y) {
+                kendaniArr.splice(i, 1);
                 break;
             }
         }
-       // console.log("merav");
+       console.log("merav");
     }
 
 

@@ -4,7 +4,9 @@ var xotArr = [];
 var eatArr = [];
 var gishatichArr = [];
 var gishatichkerArr = [];
-var kerparArr = [];
+var kendaniArr=[];
+
+
 
 
 var erk = 50;
@@ -13,11 +15,11 @@ var grasscount = 80;
 var eatcount = 50;
 var gishcount = 30;
 var gishkercount = 20;
-var kerparcount = 10;
+var kendanicount = 40;
 var wheaterContainer;
 
-var obj={
-    "grasscount":0
+var statistika = {
+    "grasscount": 0,
 }
 
 function setup() {
@@ -70,8 +72,8 @@ function setup() {
         }
     }
 
-    var c = 0;
-    while (c < kerparcount) {
+var c = 0;
+    while (c < kendanicount) {
         var x = Math.floor(random(0, erk));
         var y = Math.floor(random(0, bar));
         if (matrix[x][y] == 0) {
@@ -79,6 +81,7 @@ function setup() {
             c++
         }
     }
+    
 
 
 
@@ -109,6 +112,11 @@ function setup() {
                 gishatichArr.push(gishatich);
 
             }
+            else if (matrix[i][j] == 5) {
+                var kendani = new Kendani(j, i, 5);
+                kendaniArr.push(kendani);
+
+            }
         }
     }
 
@@ -123,12 +131,10 @@ function draw() {
 
 
 
-
-
-    if (f % 30 >= 0 && f % 30 <= 9) {
-        wheaterContainer.innerHTML = "garun";
+    if (f % 50 >= 5 && f % 50 <= 10) {
+        wheaterContainer.innerHTML = "Garun";
         wheaterContainer.style.color = "green";
-        
+
 
         background('#acacac');
         for (var i = 0; i < matrix.length; i++) {
@@ -144,22 +150,22 @@ function draw() {
                     rect(j * side, i * side, side, side);
                 }
                 else if (matrix[i][j] == 3) {
-                    fill('#0F0E0E  ');
+                    fill('#0F0E0E');
                     rect(j * side, i * side, side, side);
                 }
                 else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                    fill('#cc3300  ');
+                    fill('#cc3300');
                     ellipse(j * side, i * side, side, side);
                 }
-                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                else if (matrix[i][j] == 5 ) {
                     fill('blue');
                     rect(j * side, i * side, side, side);
                 }
 
             }
         }
-    } else if (f % 30 >= 9 && f % 30 <= 19) {
-        wheaterContainer.innerHTML = "amar";
+    } else if (f % 50 >= 10 && f % 50 <= 15) {
+        wheaterContainer.innerHTML = "Amar";
         wheaterContainer.style.color = "#24F967";
         background('#F39C12');
         for (var i = 0; i < matrix.length; i++) {
@@ -182,15 +188,15 @@ function draw() {
                     fill('#cc3300  ');
                     ellipse(j * side, i * side, side, side);
                 }
-                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                else if (matrix[i][j] == 5 ) {
                     fill('blue');
                     rect(j * side, i * side, side, side);
                 }
 
             }
         }
-    } else if (f % 30 >= 19 && f % 30 <= 24) {
-        wheaterContainer.innerHTML = "ashun";
+    } else if (f % 50 >= 15 && f % 50 <= 20) {
+        wheaterContainer.innerHTML = "Ashun";
         wheaterContainer.style.color = "#B9A303";
         background('#acacac');
         for (var i = 0; i < matrix.length; i++) {
@@ -213,15 +219,15 @@ function draw() {
                     fill('#cc3300  ');
                     ellipse(j * side, i * side, side, side);
                 }
-                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                else if (matrix[i][j] == 5   ) {
                     fill('blue');
                     rect(j * side, i * side, side, side);
                 }
 
             }
         }
-    } else if (f % 30 >= 24 && f % 30 <= 29) {
-        wheaterContainer.innerHTML = "dzmer";
+    } else if (f % 50 >= 25 && f % 50 <= 30) {
+        wheaterContainer.innerHTML = "Dzmer";
         wheaterContainer.style.color = "#B6B6B3  ";
         background('#acacac');
         for (var i = 0; i < matrix.length; i++) {
@@ -244,7 +250,7 @@ function draw() {
                     fill('#cc3300  ');
                     ellipse(j * side, i * side, side, side);
                 }
-                else if (matrix[i][j] == 5 && gishatichArr.length > 30) {
+                else if (matrix[i][j] == 5 ) {
                     fill('blue');
                     rect(j * side, i * side, side, side);
                 }
@@ -257,8 +263,7 @@ function draw() {
 
     for (var i in xotArr) {
         xotArr[i].mul();
-        obj.grasscount++;
-
+        statistika.grasscount++;
     }
 
     for (var i in eatArr) {
@@ -275,9 +280,11 @@ function draw() {
         }
 
     }
-    for (var i in kerparArr) {
-       kerparArr[i].eat();
+    for (var i in kendaniArr) {
+        kendaniArr[i].eat();
+      
     }
+
 }
 
 
