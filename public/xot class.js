@@ -2,14 +2,12 @@
 class Grass extends mayrakan {
     constructor(x, y, ind) {
         super(x, y, ind);
-    
-       
+
+
 
     }
 
-
-
-    mul() {
+ mul() {
         this.multiply++;
         if (this.multiply == 2) {
             var emptyCord = this.getDirections(0);
