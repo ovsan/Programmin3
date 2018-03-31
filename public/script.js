@@ -1,3 +1,5 @@
+
+
 var matrix = [];
 var side = 20;
 var xotArr = [];
@@ -21,6 +23,8 @@ var wheaterContainer;
 var statistika = {
     "grasscount": 0,
     "eatcount": 0,
+    "gishcount":0,
+
 }
 
 function setup() {
@@ -156,6 +160,7 @@ function draw() {
 
     for (var i in gishatichArr) {
         gishatichArr[i].eat();
+        statistika.gishcount++;
     }
 
     if (gishatichArr.length > 30) {
