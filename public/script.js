@@ -36,7 +36,7 @@ function setup() {
     fillMatrixWithChars(2, eatcount);
     fillMatrixWithChars(3, gishcount);
     fillMatrixWithChars(4, gishkercount);
-    fillMatrixWithChars(5,kendanicount);
+    fillMatrixWithChars(5, kendanicount);
 
     noStroke()
     frameRate(80);
@@ -76,124 +76,50 @@ function setup() {
 
 }
 
-
+var f = 0;
 function draw() {
-    var f = frameCount;
-    var grassColor="green";
-    console.log(f *= 2);
-
-
-    if (f %40 >=5  && f % 40 <=10 ) {
+    
+    f++;
+    console.log(f);
+    var grassColor = "green";
+    if (f >= 0 && f <= 20) {
         wheaterContainer.innerHTML = "Garun";
         wheaterContainer.style.color = "green";
-         background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("green");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300');
-                ellipse(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 5) {
-                fill('blue');
-                rect(j * side, i * side, side, side);
-            }
-
-        }
-    }
-
-       
-
-    } else if (f % 40 >=10 && f % 40 <=15 ) {
+        grassColor = "green";
+    } else if (f >= 21 && f <= 41) {
         wheaterContainer.innerHTML = "Amar";
         wheaterContainer.style.color = "#24F967";
-         background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("#24F967");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300');
-                ellipse(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 5) {
-                fill('blue');
-                rect(j * side, i * side, side, side);
-            }
+        grassColor = "#24F967";
 
-        }
-    }
-
-        
-    } else if (f % 40 >=15 && f % 40 <=20 ) {
+    } else if (f >= 42 && f <= 62) {
         wheaterContainer.innerHTML = "Ashun";
         wheaterContainer.style.color = "#B9A303";
-         background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
-        for (var j = 0; j < matrix[i].length; j++) {
-            if (matrix[i][j] == 1) {
-                fill("#B9A303");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 2) {
-                fill("orange");
-                rect(j * side, i * side, side, side);
-            } else if (matrix[i][j] == 0) {
-                fill('#acacac');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 3) {
-                fill('#0F0E0E');
-                rect(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 4 && gishatichArr.length > 30) {
-                fill('#cc3300');
-                ellipse(j * side, i * side, side, side);
-            }
-            else if (matrix[i][j] == 5) {
-                fill('blue');
-                rect(j * side, i * side, side, side);
-            }
+        grassColor = "#B9A303";
 
-        }
-    }
-
-       
-    } else if (f % 40 >= 25 && f %40 <=30 ) {
+    } else if (f >= 63 && f <= 93) {
         wheaterContainer.innerHTML = "Dzmer";
         wheaterContainer.style.color = "#B6B6B3";
-         background('#acacac');
+        grassColor = "white";
+
+}
+    else if (f >93) {
+        f=0;
+ }
+
+
+    else {
+        console.log("pst");
+    }
+
+
+    background('#acacac');
     for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {
             if (matrix[i][j] == 1) {
-                fill("white");
+                fill(grassColor);
                 rect(j * side, i * side, side, side);
             } else if (matrix[i][j] == 2) {
-                fill("orange");
+                fill("yellow");
                 rect(j * side, i * side, side, side);
             } else if (matrix[i][j] == 0) {
                 fill('#acacac');
@@ -215,10 +141,6 @@ function draw() {
         }
     }
 
-      
-    }
-
-   
 
 
 
