@@ -20,6 +20,7 @@ var gishkercount = 20;
 var kendanicount = 40;
 var wheaterContainer;
 
+
 var statistika = {
     "grasscount": 0,
     "eatcount": 0,
@@ -78,30 +79,32 @@ function setup() {
 
     wheaterContainer = document.getElementById("wheater");
 
+   
 }
 
 var f = 0;
 function draw() {
-    
+     
+ 
     f++;
     console.log(f);
     var grassColor = "green";
     if (f >= 0 && f <= 20) {
-        wheaterContainer.innerHTML = "Garun";
+        wheaterContainer.innerHTML = "Գարուն";
         wheaterContainer.style.color = "green";
         grassColor = "green";
     } else if (f >= 21 && f <= 41) {
-        wheaterContainer.innerHTML = "Amar";
+        wheaterContainer.innerHTML = "Ամառ";
         wheaterContainer.style.color = "#24F967";
         grassColor = "#24F967";
 
     } else if (f >= 42 && f <= 62) {
-        wheaterContainer.innerHTML = "Ashun";
+        wheaterContainer.innerHTML = "Աշուն";
         wheaterContainer.style.color = "#B9A303";
         grassColor = "#B9A303";
 
     } else if (f >= 63 && f <= 93) {
-        wheaterContainer.innerHTML = "Dzmer";
+        wheaterContainer.innerHTML = "Ձմեռ";
         wheaterContainer.style.color = "#B6B6B3";
         grassColor = "white";
 
@@ -111,9 +114,7 @@ function draw() {
  }
 
 
-    else {
-        console.log("pst");
-    }
+    
 
 
     background('#acacac');
