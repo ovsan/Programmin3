@@ -10,10 +10,12 @@ class Grass extends mayrakan {
  mul() {
         this.multiply++;
         if (this.multiply == 2) {
+              statistics.grasscount++;
             var emptyCord = this.getDirections(0);
 
             var cord = random(emptyCord);
             if (cord) {
+                statistics.cnvacxoter++;
                 var x = cord[0];
                 var y = cord[1];
 
@@ -22,6 +24,8 @@ class Grass extends mayrakan {
 
                 matrix[y][x] = 1;
                 this.multiply = 0;
+               
+
             }
         }
     }

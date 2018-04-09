@@ -8,6 +8,7 @@ class Eatgrass extends mayrakan {
     }
 
     move() {
+        statistics.eatcount ++;
         var emptyCord = this.getDirections(0);
         var cord = random(emptyCord);
 
@@ -28,6 +29,7 @@ class Eatgrass extends mayrakan {
 
 
     eat() {
+        statistics.eatcount++;
 
         var emptyCord = this.getDirections(1);
 

@@ -22,11 +22,14 @@ var wheaterContainer;
 
 var socket = io.connect('http://localhost:3000');
 var statistics = {
-    "timestamp":"",
+    "timestamp": "",
     "grasscount": 0,
     "eatcount": 0,
-    "gishcount":0,
-    "kendanicount":0
+    "gishcount": 0,
+    "kendanicount": 0,
+    "cnvacxoter": 0,
+    "mahacacxoter": 0,
+    "keracxoter": 0
 
 }
 
@@ -81,13 +84,13 @@ function setup() {
 
     wheaterContainer = document.getElementById("wheater");
 
-   
+
 }
 
 var f = 0;
 function draw() {
-     
- 
+
+
     f++;
     console.log(f);
     var grassColor = "green";
@@ -110,13 +113,13 @@ function draw() {
         wheaterContainer.style.color = "#B6B6B3";
         grassColor = "white";
 
-}
-    else if (f >93) {
-        f=0;
- }
+    }
+    else if (f > 93) {
+        f = 0;
+    }
 
 
-    
+
 
 
     background('#acacac');
@@ -153,17 +156,18 @@ function draw() {
 
     for (var i in xotArr) {
         xotArr[i].mul();
-       
+
     }
+
 
     for (var i in eatArr) {
         eatArr[i].eat();
-     
+
     }
 
     for (var i in gishatichArr) {
         gishatichArr[i].eat();
-      
+
     }
 
     if (gishatichArr.length > 30) {
@@ -176,10 +180,11 @@ function draw() {
         kendaniArr[i].eat();
 
     }
-    statistics.f = f;
-    statistics.timestamp = (new Date()).toString();
-    socket.emit("send data", statistics);
-
+    if (f % 2=== 0) {
+        statistics.f = f;
+        statistics.timestamp = (new Date()).toString();
+        socket.emit("send data", statistics);
+    }
 }
 
 
