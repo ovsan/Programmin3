@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:4444');
+var socket = io.connect('http://localhost:3000');
 var table = document.getElementById("statistics");
 
 setInterval(function () {
@@ -8,14 +8,14 @@ socket.on("send stats", function (statistics) {
     //Պատրսատում ենք աղյուսակը
     statistics = JSON.parse(statistics);
     table.innerHTML = "";
-    tableHTML = "<tr><td>Ժամանակ</td><td>Քլիքներ</td><td>Կրկնակի Քլիքներ</td><td>Ստեղնաշար</td><td>frameCount</td></tr>";
+    tableHTML = "<tr><td>Ժամանակ</td><td>Խոտ</td><td>խոտակեր</td><td>Գիշատիչ</td><td>Կենդանի</td></tr>";
     for (var st of statistics) {
         tableHTML += "<tr>";
         tableHTML += "<td>" + st.timestamp + "</td>";
-        tableHTML += "<td>" + st.clicks + "</td>";
-        tableHTML += "<td>" + st.dbclicks + "</td>";
-        tableHTML += "<td>" + st.keypresses + "</td>";
-        tableHTML += "<td>" + st.framecount + "</td>";
+        tableHTML += "<td>" + st.grasscount + "</td>";
+        tableHTML += "<td>" + st.eatcount + "</td>";
+        tableHTML += "<td>" + st.gishcount + "</td>";
+        tableHTML += "<td>" + st.kendanicount + "</td>";
         tableHTML += "</tr>";
     }
 

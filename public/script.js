@@ -20,11 +20,13 @@ var gishkercount = 20;
 var kendanicount = 40;
 var wheaterContainer;
 
-
-var statistika = {
+var socket = io.connect('http://localhost:3000');
+var statistics = {
+    "timestamp":"",
     "grasscount": 0,
     "eatcount": 0,
     "gishcount":0,
+    "kendanicount":0
 
 }
 
@@ -151,17 +153,17 @@ function draw() {
 
     for (var i in xotArr) {
         xotArr[i].mul();
-        statistika.grasscount++;
+       
     }
 
     for (var i in eatArr) {
         eatArr[i].eat();
-        statistika.eatcount++;
+     
     }
 
     for (var i in gishatichArr) {
         gishatichArr[i].eat();
-        statistika.gishcount++;
+      
     }
 
     if (gishatichArr.length > 30) {
@@ -174,6 +176,9 @@ function draw() {
         kendaniArr[i].eat();
 
     }
+    statistics.f = f;
+    statistics.timestamp = (new Date()).toString();
+    socket.emit("send data", statistics);
 
 }
 
